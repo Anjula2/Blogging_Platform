@@ -8,12 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogPostController extends Controller
 {
-    // Display paginated list of posts with search & filtering
     public function index(Request $request)
     {
         $query = BlogPost::query()->with('user');
 
-        // Search by keyword in title or content
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function($q) use ($search) {
@@ -22,18 +20,15 @@ class BlogPostController extends Controller
             });
         }
 
-        // Filter by tag (assuming tags are comma-separated string)
         if ($request->filled('tag')) {
             $tag = $request->tag;
             $query->where('tags', 'like', "%{$tag}%");
         }
 
-        // Filter by category
         if ($request->filled('category')) {
             $query->where('category', $request->category);
         }
 
-        // Filter by author name (partial match)
         if ($request->filled('author')) {
             $author = $request->author;
             $query->whereHas('user', function($q) use ($author) {

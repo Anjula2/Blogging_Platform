@@ -37,7 +37,6 @@ class CommentController extends Controller
         'body' => $request->body,
     ]);
 
-    // Send email to the post owner (if not commenting on own post)
     if ($post->user->id !== auth()->id()) {
         Mail::to($post->user->email)->send(new NewCommentNotification($comment));
     }

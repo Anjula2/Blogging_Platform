@@ -10,7 +10,6 @@
         @csrf
         @method('PUT')
 
-        {{-- Title --}}
         <div>
             <label for="title" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Title</label>
             <input id="title" name="title" type="text" value="{{ old('title', $blogPost->title) }}" required
@@ -20,7 +19,6 @@
             @enderror
         </div>
 
-        {{-- Content --}}
         <div>
             <label for="content" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Content</label>
             <textarea id="content" name="content" rows="8" required
@@ -30,7 +28,6 @@
             @enderror
         </div>
 
-        {{-- Category --}}
         <div>
             <label for="category" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Category</label>
             <input id="category" name="category" type="text" value="{{ old('category', $blogPost->category) }}"
@@ -40,7 +37,6 @@
             @enderror
         </div>
 
-        {{-- Tags --}}
         <div>
             <label for="tags" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tags (comma separated)</label>
             <input id="tags" name="tags" type="text" value="{{ old('tags', $blogPost->tags) }}"
@@ -50,7 +46,6 @@
             @enderror
         </div>
 
-        {{-- Image --}}
         <div>
             <label for="image" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Image</label>
 
@@ -68,7 +63,6 @@
             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Leave empty if you don't want to change the image.</p>
         </div>
 
-        {{-- Submit --}}
         <div class="text-center">
             <button type="submit"
                 class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg shadow transition">

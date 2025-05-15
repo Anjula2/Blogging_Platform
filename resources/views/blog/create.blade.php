@@ -9,7 +9,6 @@
     <form method="POST" action="{{ route('admin.store') }}" enctype="multipart/form-data" class="space-y-8 bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md">
         @csrf
 
-        {{-- Title --}}
         <div>
             <label for="title" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Title</label>
             <input id="title" name="title" type="text" value="{{ old('title') }}" required
@@ -19,7 +18,6 @@
             @enderror
         </div>
 
-        {{-- Content --}}
         <div>
             <label for="content" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Content</label>
             <textarea id="content" name="content" rows="8" required
@@ -29,7 +27,6 @@
             @enderror
         </div>
 
-        {{-- Category --}}
         <div>
             <label for="category" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Category</label>
             <input id="category" name="category" type="text" value="{{ old('category') }}"
@@ -39,7 +36,6 @@
             @enderror
         </div>
 
-        {{-- Tags --}}
         <div>
             <label for="tags" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Tags (comma separated)</label>
             <input id="tags" name="tags" type="text" value="{{ old('tags') }}"
@@ -49,7 +45,6 @@
             @enderror
         </div>
 
-        {{-- Image Upload --}}
         <div>
             <label for="image" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Image</label>
             <input id="image" name="image" type="file" accept="image/*"
@@ -59,7 +54,6 @@
             @enderror
         </div>
 
-        {{-- Submit Button --}}
         <div class="pt-4">
             <button type="submit"
                 class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-200">
